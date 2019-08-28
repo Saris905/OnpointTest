@@ -1,0 +1,385 @@
+/* вводные */
+
+@font-face {
+    font-family: 'Gotham Pro Light';
+    src: url('/assets/fonts/GothamPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato Light';
+    src: url('/assets/fonts/Lato-Light.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Gotham Pro Light';
+    font-weight: normal;
+}
+
+/* Индикаторы страниц */
+
+.page-indicator {
+    position: fixed;
+    right: 35px;
+    top: 350px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 55px;
+    justify-content: space-between;
+}
+
+.page-indicator__item1 {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.page-indicator__item2 {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.page-indicator__item3 {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.page-indicator_selected {
+    background: #f78b1f;
+}
+
+/* Индикатор скролла и блюр */
+
+.scroll {
+    font-size: 16px;
+    z-index: 1;
+    color: #fff;
+    position: fixed;
+    bottom: 25px;
+    left: 45%;
+}
+
+.scroll::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    border-top: 3px solid #fff;
+    transform: rotate(137deg);
+    position: relative;
+    left: 50px;
+}
+
+.scroll::before {
+    content: '';
+    display: inline-block;
+    width: 31px;
+    height: 30px;
+    border-top: 3px solid #fff;
+    transform: rotate(42deg);
+    position: relative;
+    top: 67px;
+    left: 25px;
+    z-index: 1;
+}
+
+/* Первый слайд */
+
+.page1 {
+    background: url("/assets/img/bg1.jpg") no-repeat center top/ cover;
+    height:100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+
+}
+
+.page1__title {
+    color: #0d319c;
+    font-size: 25px;
+    line-height: 1.25;
+    width: 750px;
+    position: absolute;
+    top: 135px;
+    left: 70px;
+}
+
+.blur {
+    background: url(/assets/img/blur.png) no-repeat center;
+    width: 100%;
+    height: 135px;
+    position: fixed;
+    bottom: -10px;
+    left: 0px;
+}
+
+            /* Мерцающие маячки */
+
+            /* Верхний */
+.point-up {
+    position: relative;
+    top: 260px;
+    left: 558px;
+    width: 260px;
+}
+
+.point-up__round {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(221, 117, 28, 0.3);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #d95f26;
+}
+
+.point-up__round::before,
+.point-up__round::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(221, 117, 28, 0.7);
+    top: 16px;
+    left: 16px;
+    border-radius: 50%;
+    border: 2px solid #d95f26;
+    animation: pulse 1.5s linear infinite;
+}
+
+.point-up__round::after {
+    animation-delay: 0.7s;
+    background-color: rgba(221, 117, 28, 0.5);
+}
+
+.point-up__describe {
+    position: absolute;
+    top: 25px;
+    font-size: 22px;
+    color: #0d319c;
+    left: 75px;
+}
+
+            /* Нижний */
+
+.point-down {
+    position: relative;
+    top: 535px;
+    left: 475px;
+    width: 260px;
+}
+
+.point-down__round {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(221, 117, 28, 0.3);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #d95f26;
+}
+
+.point-down__describe {
+    position: absolute;
+    font-size: 22px;
+    color: #0d319c;
+    top: -25px;
+    left: -115px;
+}
+
+.point-down__round::before,
+.point-down__round::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(221, 117, 28, 0.7);
+    top: 6px;
+    left: 6px;
+    border-radius: 50%;
+    border: 1px solid #d95f26;
+    animation: pulse 1.5s linear infinite;
+}
+
+.point-down__round::after {
+    animation-delay: 0.7s;
+    background-color: rgba(221, 117, 28, 0.5);
+}
+
+            /* Левый */
+
+.point-left {
+    position: relative;
+    top: 428px;
+    left: 268px;
+    width: 260px;
+}
+
+.point-left__describe {
+    position: absolute;
+    font-size: 22px;
+    color: #0d319c;
+    top: -25px;
+    left: -60px;
+}
+
+.point-left__round {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(221, 117, 28, 0.3);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #d95f26;
+}
+
+.point-left__round::before,
+.point-left__round::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(221, 117, 28, 0.7);
+    top: 8px;
+    left: 8px;
+    border-radius: 50%;
+    border: 2px solid #d95f26;
+    animation: pulse 1.5s linear infinite;
+}
+
+.point-left__round::after {
+    animation-delay: 0.7s;
+    background-color: rgba(221, 117, 28, 0.5);
+}
+
+            /* Правый */
+
+.point-right {
+    position: relative;
+    top: 512px;
+    left: 818px;
+    width: 160px;
+}
+
+.point-right__describe {
+    position: absolute;
+    font-size: 22px;
+    color: #0d319c;
+    top: -25px;
+    left: -40px;
+}
+
+.point-right__round {
+    width: 18px;
+    height: 18px;
+    background-color: rgba(221, 117, 28, 0.3);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #d95f26;
+}
+
+.point-right__round::before,
+.point-right__round::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(221, 117, 28, 0.7);
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    border: 1px solid #d95f26;
+    animation: pulse 1.5s linear infinite;
+}
+
+.point-right__round::after {
+    animation-delay: 0.7s;
+    background-color: rgba(221, 117, 28, 0.5);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Второй слайд */
+
+.page2 {
+    background: url("/assets/img/bg2.jpg") no-repeat center top/ cover;
+    height:100vh;
+    width: 100vw;
+    position: absolute;
+    top: 100%;
+
+}
+
+.page2__insideForParallax {
+    position: absolute;
+    top: -10%;
+    height: 110%;
+    width: 100%;
+}
+
+.page2__title {
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    padding: 250px 0 0 0;
+    width: 450px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.page2__icebergs img {
+    width: 930px;
+    position: absolute;
+    top: 100px;
+    left: 95px;
+}
+
+
+/* Третий слайд */
+
+.page3 {
+    background: url("/assets/img/bg3.jpg") no-repeat center top/ cover;
+    height:100vh;
+    width: 100vw;
+    position: absolute;
+    top: 200%;
+}
+
+.page3__title {
+    color: #ffffff;
+    font-size: 22px;
+    padding: 115px 0 0 80px;
+}
+
+.page3__scheme {
+    display: flex;
+    justify-content: center;
+}
+
+.page3__scheme img {
+    width: 850px;
+    height: 437px;
+    margin: 20px 0 0 0;
+}
